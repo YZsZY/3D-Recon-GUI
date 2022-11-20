@@ -1,0 +1,39 @@
+# assume cuda 11.1
+pip install torch==1.10.2+cu111 torchvision==0.11.3+cu111 --extra-index-url https://download.pytorch.org/whl/cu111 --no-cache-dir
+pip install torch-scatter -f https://data.pyg.org/whl/torch-1.10.2+cu111.html
+
+pip install -r requirements.txt
+pip install git+https://github.com/NVlabs/tiny-cuda-nn/#subdirectory=bindings/torch
+
+git clone https://github.com/NVIDIA/apex
+cd apex
+pip install -v --disable-pip-version-check --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./
+
+pip install models/csrc/
+
+
+安装colmap
+https://blog.csdn.net/weixin_44172157/article/details/122203759
+https://blog.csdn.net/m0_49441146/article/details/124153326
+安装前记得改anaconda的名字
+安装依赖库
+sudo apt-get install \
+    git \
+    cmake \
+    build-essential \
+    libboost-program-options-dev \
+    libboost-filesystem-dev \
+    libboost-graph-dev \
+    libboost-system-dev \
+    libboost-test-dev \
+    libeigen3-dev \
+    libsuitesparse-dev \
+    libfreeimage-dev \
+    libmetis-dev \
+    libgoogle-glog-dev \
+    libgflags-dev \
+    libglew-dev \
+    qtbase5-dev \
+    libqt5opengl5-dev \
+    libcgal-dev
+编译报错参考：https://blog.csdn.net/m0_57677267/article/details/126536772?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-126536772-blog-124261123.pc_relevant_multi_platform_whitelistv4&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-126536772-blog-124261123.pc_relevant_multi_platform_whitelistv4&utm_relevant_index=1
